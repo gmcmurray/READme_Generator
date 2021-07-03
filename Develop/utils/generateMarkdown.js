@@ -19,12 +19,34 @@ function renderLicenseSection(license) {
 function renderMainTitle(title){
 
 }
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
- renderMainTitle(`# ${data.title})
- 
 
-`;
+var title = "Test"
+// TODO: Create a function to generate markdown for README
+function generateMarkdown(response) {
+let outpfile = `
+# ${response.title} \n
+## Table of Contents
+
+1. ### [Description](#descrip) 
+
+2. ### [Installation](#install)
+
+3. ### [Usage](#usage)
+
+4. ### [License](#lic)
+
+5. ### [Contributing](#contri)
+
+6. ### [Tests](#test)
+
+7. ### [Questions](#quest)
+
+8. ### [Images](#images)
+---------------------------------
+## 1. Description<a id="descrip"></a>
+${response.descrip}
+`
+return outpfile;
 }
 
 module.exports = generateMarkdown;
