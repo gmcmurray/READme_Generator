@@ -1,67 +1,3 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {
-
-}
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {
-
-}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {
-
-}
-function renderMainTitle(title){
-
-}
-
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(response) {
-let outpfile = `
-# ${response.title} \n
-## Table of Contents
-
-1. ### [Description](#descrip) 
-${response.description}
-
-2. ### [Installation](#install)
-Files used in API found : ${response.workingfiles}
-API deployed here : ${response.deployedurl}
-
-3. ### [Usage](#usage)
-The API is target to be used:
-${response.usage}
-
-4. ### [License](#lic)
-${licenses[response.license][1]}
-
-License covering API:
-${licenses[response.license][0]}
-
-5. ### [Contributing](#contri)
-${response.contributors}
-
-6. ### [Tests](#test)
-The following tests were conducted on the API:
-${response.tests}
-
-7. ### [Questions](#quest)
-For any questions you can email me at:
-${response.emailaddress}
-
-My github username is ${response.githubusername}
-
-8. ### [Images](#images)
-${response.imagespath}
----------------------------------
-`
-return outpfile;
-}
-
 
 const licenses  ={
     "MIT":[`MIT License
@@ -117,4 +53,4 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)"]
 }
 
-module.exports = generateMarkdown;
+console.log(licenses["MIT"][0])
