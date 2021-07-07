@@ -14,7 +14,11 @@ const questions = [
         message:"Description of your project? ",
         name:"description"
     },
-    
+    {
+        type:"input",
+        message:"Instructions for Installation of API ? ",
+        name:"install"
+    },
     {
         type:"input",
         message:"Where are the working files for the API? ",
@@ -51,12 +55,6 @@ const questions = [
         message:"Enter email to respond to Questions",
         name:"emailaddress"
     },
-
-    {
-        type:"input",
-        message:"Attach any images including paths ",
-        name:"imagespath"
-    },
     {
         type:"rawlist",
         message:"Which licenses are you acknowledging? ",
@@ -85,22 +83,3 @@ function init() {
 // Function call to initialize app
 init()
 
-// inquirer
-// .prompt([
-//     {
-//         type: "search-list",
-//         message: "Select topping",
-//         name: "topping",
-//         choices: ["Pepperoni", "Ham", "Ground Meat", "Bacon", "Mozzarella", "Bottle"],
-//         validate: function(answer) {
-//             if (answer === 'Bottle') {
-//                 return `Whoops, ${answer} is not a real topping.`;
-//             }
-//             return true;
-//         }
-//     }
-// ])
-// .then(function(answers) {
-//     console.log(JSON.stringify(answers, null, "  "));
-// })
-// .catch(e => console.log(e));

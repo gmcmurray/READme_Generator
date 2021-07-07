@@ -1,3 +1,5 @@
+
+
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
@@ -15,56 +17,74 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
 
 }
-function renderMainTitle(title){
-
-}
+/
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(response) {
-let outpfile = `
+    let outpfile = `
+${licenses[response.license][1]}
 # ${response.title} \n
 ## Table of Contents
+1.  [Description](#descrip) 
+2. [Installation](#install)
+3. [Usage](#usage)
+4. [License](#lic)
+5. [Contributing](#contri)
+6. [Tests](#test)
+7. [Questions](#quest)
 
-1. ### [Description](#descrip) 
-${response.description}
+---------------------------------------
+## 1. Description <a id="descrip"> </a>
+'${response.description}'
 
-2. ### [Installation](#install)
-Files used in API found : ${response.workingfiles}
+----------------------------------------------
+
+## 2. Installation <a id="install"></a>
+Installation Instructions: \n
+${response.install}\n
+Files used in API found : ${response.workingfiles} \n
 API deployed here : ${response.deployedurl}
 
-3. ### [Usage](#usage)
+-------------------------------------------------
+
+## 3. Usage <a id="usage"></a>
 The API is target to be used:
 ${response.usage}
 
-4. ### [License](#lic)
-${licenses[response.license][1]}
+-----------------------------------------------------
+
+## 4. License <a id="lic"></a>
 
 License covering API:
 ${licenses[response.license][0]}
 
-5. ### [Contributing](#contri)
+----------------------------------------------
+
+## 5. Contributing <a id="contri"></a>
 ${response.contributors}
 
-6. ### [Tests](#test)
+-------------------------------------------------
+
+## 6. Tests <a id="test"></a>
 The following tests were conducted on the API:
 ${response.tests}
 
-7. ### [Questions](#quest)
+----------------------------------------------------------------
+
+## 7.  Questions <a id="quest"></a>
 For any questions you can email me at:
 ${response.emailaddress}
 
 My github username is ${response.githubusername}
 
-8. ### [Images](#images)
-${response.imagespath}
 ---------------------------------
 `
-return outpfile;
+    return outpfile;
 }
 
-
-const licenses  ={
-    "MIT":[`MIT License
+// Object containing the common licenses used in API's
+const licenses = {
+    "MIT": [`MIT License
     Copyright (c) <2021> <George McMurray>
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -82,8 +102,8 @@ const licenses  ={
     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.`,"[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"],
-    "BSD-2-Clause":[`Copyright <YEAR> <COPYRIGHT HOLDER>
+    SOFTWARE.`, "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"],
+    "BSD-2-Clause": [`Copyright <YEAR> <COPYRIGHT HOLDER>
 
     Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
     
@@ -95,8 +115,8 @@ const licenses  ={
     A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES 
     (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
     WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.`,
-    "[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)"],
-"BSD-3-Clause":[`Copyright <YEAR> <COPYRIGHT HOLDER>
+        "[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)"],
+    "BSD-3-Clause": [`Copyright <YEAR> <COPYRIGHT HOLDER>
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
@@ -110,11 +130,11 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
 LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT 
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.`,
-"[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)"],
-"Apache-2.0":[`See apache.txt file`,
-"[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"],
-"Mozilla":[`This is copy left, consult:https://www.mozilla.org/en-US/MPL/2.0/FAQ/ `,
-"[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)"]
+        "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)"],
+    "Apache-2.0": [`See apache.txt file`,
+        "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"],
+    "Mozilla": [`This is copy left, consult:https://www.mozilla.org/en-US/MPL/2.0/FAQ/ `,
+        "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)"]
 }
 
 module.exports = generateMarkdown;
