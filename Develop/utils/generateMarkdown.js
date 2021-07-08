@@ -17,7 +17,7 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
 
 }
-/
+
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(response) {
@@ -25,7 +25,7 @@ function generateMarkdown(response) {
 ${licenses[response.license][1]}
 # ${response.title} \n
 ## Table of Contents
-1.  [Description](#descrip) 
+1. [Description](#descrip) 
 2. [Installation](#install)
 3. [Usage](#usage)
 4. [License](#lic)
@@ -35,7 +35,7 @@ ${licenses[response.license][1]}
 
 ---------------------------------------
 ## 1. Description <a id="descrip"> </a>
-'${response.description}'
+${response.description}
 
 ----------------------------------------------
 
