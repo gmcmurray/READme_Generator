@@ -2,6 +2,14 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
+const Emailvalidate = async (email) => {
+        valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+        if (!valid) {
+            console.log(".  Please enter a valid email")
+            return false;
+        }
+        return true;
+    };
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -52,7 +60,15 @@ const questions = [
     {
         type: "input",
         message: "Enter email to respond to Questions",
-        name: "emailaddress"
+        name: "emailaddress",
+        validate: function(emailaddress) {
+            valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailaddress)
+            if (!valid) {
+                console.log(".  Please enter a valid email")
+                return false;
+            }
+            return true;
+        }
     },
     {
         type: "rawlist",
